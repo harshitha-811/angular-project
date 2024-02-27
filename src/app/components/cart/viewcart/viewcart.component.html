@@ -1,0 +1,21 @@
+<!-- <p>viewcart works!</p> -->
+<body>
+    <table class="table table-bordered">
+        <tr class="text-danger border-2">
+            <th>Customer Id</th>
+            <th>Product Id</th>
+            <th>Quantity</th>
+        </tr>
+        <tr *ngFor="let c of cartItems" class="border-2">
+            <td>{{c.customerId}}</td>
+            <td>{{c.productId}}</td>
+            <td>{{c.quantity}}</td>
+            <td><button class="btn btn-danger" [routerLink]="['/deletecart',c.cartItemId]">Delete</button></td>
+        </tr>
+    </table>
+
+   <!--  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" class="btn btn-primary btn-lg  px-4 me-md-2" (click)="logout()"  >Check Out</button>
+      </div> -->
+
+     <button (click)="view()"></button>

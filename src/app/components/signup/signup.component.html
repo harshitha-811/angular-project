@@ -1,0 +1,79 @@
+<!-- <div>
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+        <div class="container-fluid">
+            <label for="">Email</label>
+            <input type="email" formControlName="customerEmail"/>
+            <span *ngIf="customerForm.get('customerEmail').errors">
+               <span *ngIf="customerForm.get('customerEmail').errors.required">
+                   Email is required.
+               </span>
+               <span *ngIf="customerForm.get('customerEmail').errors.pattern">
+                   Enter valid email.
+               </span>
+            </span>
+        </div>
+   
+        <div class="container-fluid">
+            <label for="">Password</label>
+            <input type="text" formControlName="customerPassword"/>
+            <span *ngIf="customerForm.get('customerPassword').errors">
+               <span *ngIf="customerForm.get('customerPassword').errors.required">
+                   Password is required.
+               </span>
+               <span *ngIf="customerForm.get('customerPassword').errors.pattern">
+                   Enter valid password.
+               </span>
+            </span>
+        </div>
+        <div>
+            <input type="submit" value="Submit"/>
+        </div>
+    </form>
+</div> -->
+
+<!-- 
+<div>
+    {{message}}
+</div> -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center ">
+    <div class="col-md-6 border border-dark">
+    <h2 class="mb-4">Sign Up</h2>
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" formControlName="customerEmail" placeholder="Enter your email" required>
+    <span *ngIf="customerForm.get('customerEmail').errors">
+        <span *ngIf="customerForm.get('customerEmail').errors.required">
+            Email is required.
+        </span>
+        <span *ngIf="customerForm.get('customerEmail').errors.pattern">
+            Enter valid email.
+        </span>
+     </span>
+    </div>
+    <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" formControlName="customerPassword"placeholder="Enter your password" required>
+    <span *ngIf="customerForm.get('customerPassword').errors">
+        <span *ngIf="customerForm.get('customerPassword').errors.required">
+            Password is required.
+        </span>
+        <span *ngIf="customerForm.get('customerPassword').errors.pattern">
+            Enter valid password.
+        </span>
+     </span>
+    </div>
+    <!-- <div class="form-group">
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+    </div> -->
+    <button type="submit" class="btn btn-primary mb-3" [disabled]="customerForm.invalid" >Sign Up</button>
+    </form>
+    <p class="mt-3">Already have an account? <a routerLink="/login">Login here</a></p>
+
+    </div>
+    </div>
+    </div>
+     {{message}}

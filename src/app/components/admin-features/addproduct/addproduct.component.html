@@ -1,0 +1,54 @@
+
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+ 
+    <div>
+        <label for="">Name </label>
+        <input type="text" formControlName="productName">
+        <span *ngIf="productForm.get('productName').errors" class="text-danger">
+            <span *ngIf="productForm.get('productName').errors.required">
+                Name is required
+            </span>
+            <span *ngIf="productForm.get('productName').errors.minlength">
+                Minimum length is 2 characters
+            </span>
+        </span>
+    </div>
+    <br>
+    <div>
+        <label for="">Description</label>
+        <input type="text" formControlName="description">
+        <span *ngIf="productForm.get('description').errors" class="text-danger">
+            <span *ngIf="productForm.get('description').errors.required">
+                Description is required
+            </span>
+            <span *ngIf="productForm.get('description').errors.minlength">
+                Minimum length is 10 characters.
+            </span>
+          </span>
+    </div>
+    <br>
+    <div>
+        <label for="">Price</label>
+        <input type="text" formControlName="price">
+        <span *ngIf="productForm.get('price').errors" class="text-danger">
+            <span *ngIf="productForm.get('price').errors.required">
+                Price is required
+            </span>
+        </span>
+    </div>
+    <br>
+    <div>
+        <label for="">ImageUrl </label>
+        <input type="tel" formControlName="imageUrl" >
+        <span *ngIf="productForm.get('imageUrl').errors" class="text-danger">
+            <span *ngIf="productForm.get('imageUrl').errors.required">
+                Image URL is required
+            </span>
+          </span>
+    </div>
+    <br>
+    <div>
+        <button type="submit" [disabled]="productForm.invalid">Add</button>
+    </div>
+ 
+</form>

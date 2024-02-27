@@ -1,0 +1,27 @@
+
+<div>
+    <button routerLink="/addprod">Add Product</button>
+</div>
+<div>
+    <table class="table table-bordered text-secondary table-striped-columns">
+        <tr class="table border border-secondary">
+            <th>Product Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>ImageUrl</th>
+        </tr>
+        <tr *ngFor="let p of products" class="table table-danger border border-secondary">
+            <td>{{p.productId}}</td>
+            <td>{{p.productName}}</td>
+            <td>{{p.description}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.imageUrl}}</td>
+            <td><button class="btn btn-warning table-warning" [routerLink]="['/updateprod',p.productId]">Update</button></td>
+            <td><button class="btn btn-danger" [routerLink]="['/deleteprod',p.productId]">Delete</button></td>
+        </tr>
+    </table>
+</div>
+<!-- 
+[routerLink]="['/customer',c.id]"
+[routerLink]="['/delete',c.id]" -->
